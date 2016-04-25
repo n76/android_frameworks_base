@@ -615,6 +615,11 @@
 
     <!--  Permissions -->
 
+   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_fakePackageSignature">Spoof package signature</string>
+    <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
+
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_statusBar">disable or modify status bar</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -1913,7 +1918,7 @@
     <string name="lockscreen_access_pattern_cleared">Pattern cleared</string>
     <!-- Accessibility description sent when user adds a dot to the pattern. [CHAR LIMIT=NONE]  -->
     <string name="lockscreen_access_pattern_cell_added">Cell added</string>
-    <!-- Accessibility description sent when user adds a dot to the pattern. Announces the 
+    <!-- Accessibility description sent when user adds a dot to the pattern. Announces the
     actual cell when headphones are connected [CHAR LIMIT=NONE]  -->
     <string name="lockscreen_access_pattern_cell_added_verbose">
             Cell <xliff:g id="cell_index" example="3">%1$s</xliff:g> added</string>

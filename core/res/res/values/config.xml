@@ -1176,6 +1176,8 @@
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
+        <!-- The (faked) microg fused location provider -->
+        <item>com.google.android.gms</item>
     </string-array>
 
     <!-- This string array can be overriden to enable test location providers initially. -->
@@ -2299,7 +2301,7 @@
 
     <!-- Flag indicating device support for EAP SIM, AKA, AKA' -->
     <bool name="config_eap_sim_based_auth_supported">true</bool>
- 
+
     <!-- How long history of previous vibrations should be kept for the dumpsys. -->
     <integer name="config_previousVibrationsDumpLimit">20</integer>
 
