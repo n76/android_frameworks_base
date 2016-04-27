@@ -11,29 +11,33 @@ Building a ROM
 To build a AOSP 6.0.x ROM for a supported device the following steps are needed:
 
 -	Create a local_manifest.xml file containing the following:
-    <?xml version="1.0" encoding="UTF-8"?>
-    <manifest>
-      <remote  name="n76"
-               fetch="https://github.com/n76" />
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="n76"
+           fetch="https://github.com/n76" />
 
-      <!-- Support microG with fake signature permission -->
-      <remove-project path="frameworks/base" name="android_frameworks_base" />
-      <project path="frameworks/base" name="android_frameworks_base" remote="n76" revision="aosp-6.0-microg" groups="pdk-cw-fs,pdk-fs" />
+  <!-- Support microG with fake signature permission -->
+  <remove-project path="frameworks/base" name="android_frameworks_base" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="n76" revision="aosp-6.0-microg" groups="pdk-cw-fs,pdk-fs" />
 
-    </manifest>
-
+</manifest>
+```
 -	Setup the build tree:
-    mkdir OMAP4
-    cd OMAP4/
-    repo init -u git://github.com/OMAP4-AOSP/android.git -b aosp-6.0
-    mkdir .repo/local_manifests
-    cp ~/local_manifest.xml .repo/local_manifests/
-    repo sync
-
+```
+mkdir OMAP4
+cd OMAP4/
+repo init -u git://github.com/OMAP4-AOSP/android.git -b aosp-6.0
+mkdir .repo/local_manifests
+cp ~/local_manifest.xml .repo/local_manifests/
+repo sync
+```
 -	Make the ROM
-    . build/envsetup.sh
-    # in lunch select number for aosp_tuna-userdebug
-    lunch
-    make installclean
-    make clean
-    make -j2 otapackage 2>&1 | tee ~/build.log
+```
+. build/envsetup.sh
+# in lunch select number for aosp_tuna-userdebug
+lunch
+make installclean
+make clean
+make -j2 otapackage 2>&1 | tee ~/build.log
+```
